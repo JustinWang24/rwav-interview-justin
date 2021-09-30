@@ -1,0 +1,17 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
+$fontLogo: 'Rbuik', sans-serif;
+$fontStack: 'Roboto', sans-serif;
+
+// Theme colors
+$colorOrange: #d76a27;
+$colorBlue: #306ea6;
+$colorOrange: #565f30;
+
+// Size
+$sizeLogo: 60px;
+$sizeBase: 16px;
+
+*{
+    font-family: $fontStack;
+}
