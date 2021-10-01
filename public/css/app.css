@@ -1,4 +1,59 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap);
 * {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-gray {
+  background-color: #e8e8e8;
+}
+
+.bg-gray-light {
+  background-color: #f0f0f0;
+}
+
+.bg-blue {
+  background-color: #306ea6;
+}
+
+.p-30 {
+  padding: 30px;
+}
+
+.p-15 {
+  padding: 15px;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-orange {
+  color: #d76a27;
+}
+
+.text-blue {
+  color: #306ea6;
+}
+
+.btn {
+  padding: 10px;
+  border-color: #f0f0f0;
+  border-width: 1px;
+  font-size: 16px;
+}
+.btn:hover {
+  border-color: #306ea6;
+}
+
+.rwav-app-flex {
+  display: flex;
+  flex-direction: column;
+}
+.rwav-app-flex .app-header .logo {
+  font-family: "Rbuik", sans-serif;
+  font-size: 60px;
+  color: #565f30;
+  font-weight: bold;
 }

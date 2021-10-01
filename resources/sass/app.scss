@@ -6,12 +6,69 @@ $fontStack: 'Roboto', sans-serif;
 // Theme colors
 $colorOrange: #d76a27;
 $colorBlue: #306ea6;
-$colorOrange: #565f30;
+$colorGreen: #565f30;
+$colorGray300: rgb(240,240,240);
+$colorGray400: rgb(232,232,232);
 
 // Size
 $sizeLogo: 60px;
 $sizeBase: 16px;
-
 *{
     font-family: $fontStack;
+    margin: 0;
+    padding: 0;
+}
+
+// background colors
+.bg-gray{
+    background-color: $colorGray400;
+}
+.bg-gray-light{
+    background-color: $colorGray300;
+}
+.bg-blue{
+    background-color: $colorBlue;
+}
+.p-30{
+    padding: 30px;
+}
+.p-15{
+    padding: 15px;
+}
+.text-white{
+    color: white;
+}
+.text-orange{
+    color: $colorOrange;
+}
+.text-blue{
+    color: $colorBlue;
+}
+
+.btn{
+    padding: 10px;
+    border-color: $colorGray300;
+    border-width: 1px;
+    font-size: $sizeBase;
+    &:hover{
+        border-color: $colorBlue;
+    }
+}
+
+.rwav-app-flex{
+    display: flex;
+    flex-direction: column;
+    .app-header{
+        .logo{
+            font-family: $fontLogo;
+            font-size: $sizeLogo;
+            color: $colorGreen;
+            font-weight: bold;
+        }
+    }
+    .posts-wrapper{
+        .posts-title{
+
+        }
+    }
 }
