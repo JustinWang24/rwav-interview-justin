@@ -19318,22 +19318,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "post-brief",
-    innerHTML: $props.post.brief
+    innerHTML: $props.post.body
   }, null, 8
   /* PROPS */
   , _hoisted_4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "btn post-id",
     onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-      return $options.onBtnClick('post_id', $props.post.post_id);
+      return $options.onBtnClick('post_id', $props.post.id);
     }, ["prevent", "stop"]))
-  }, " Post ID: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.post.post_id), 1
+  }, " Post ID: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.post.id), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "btn user-id",
     onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-      return $options.onBtnClick('user_id', $props.post.user_id);
+      return $options.onBtnClick('user_id', $props.post.userId);
     }, ["prevent", "stop"]))
-  }, " User ID: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.post.user_id), 1
+  }, " User ID: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.post.userId), 1
   /* TEXT */
   )])]);
 }
@@ -19375,6 +19375,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.posts, function (post, idx) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "row",
       key: 'post' + idx
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_post_widget, {
       post: post,
@@ -19461,19 +19462,18 @@ var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({
       }
     },
     loadPosts: function loadPosts() {
+      var _this = this;
+
       this.inAction = true;
-      this.posts = [{
-        post_id: 1,
-        user_id: 1,
-        title: 'title 1',
-        brief: 'brief 1'
-      }, {
-        post_id: 2,
-        user_id: 3,
-        title: 'title 2',
-        brief: 'brief 2'
-      }];
-      this.inAction = false;
+      axios.get('https://jsonplaceholder.typicode.com/posts').then(function (res) {
+        for (var i = 0; i < 10; i++) {
+          _this.posts.push(res.data[i]);
+        }
+      })["catch"](function (err) {
+        alert(err);
+      })["finally"](function () {
+        _this.inAction = false;
+      });
     },
 
     /**
@@ -19536,7 +19536,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".post-widget[data-v-186a71af] {\n  margin: 20px 0;\n}\n.post-widget .post-content .post-title[data-v-186a71af] {\n  line-height: 24px;\n  margin-bottom: 20px;\n  font-weight: bold;\n}\n.post-widget .post-content .post-brief[data-v-186a71af] {\n  line-height: 20px;\n  margin-bottom: 20px;\n}\n.post-widget .post-footer[data-v-186a71af] {\n  display: flex;\n  justify-content: space-around;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".post-widget .post-content .post-title[data-v-186a71af] {\n  line-height: 24px;\n  margin-bottom: 20px;\n  font-weight: bold;\n}\n.post-widget .post-content .post-brief[data-v-186a71af] {\n  line-height: 20px;\n  margin-bottom: 20px;\n}\n.post-widget .post-footer[data-v-186a71af] {\n  display: flex;\n  justify-content: space-around;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19560,7 +19560,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".posts-wrapper .posts-title[data-v-4ac4d2f8] {\n  font-size: 24px;\n  font-weight: bold;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".posts-wrapper .posts-title[data-v-4ac4d2f8] {\n  font-size: 24px;\n  font-weight: bold;\n}\n.posts-wrapper .row[data-v-4ac4d2f8] {\n  margin-top: 20px;\n  margin-bottom: 40px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

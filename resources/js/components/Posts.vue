@@ -1,4 +1,5 @@
 <!--
+// resources/js/components/Posts.vue
 Usage:
     props
     1: Required - posts: the array of all post objects
@@ -10,7 +11,7 @@ Usage:
 <template>
     <div class="posts-wrapper p-30" v-show="visible">
         <h2 class="posts-title text-orange">POSTS</h2>
-        <div v-for="(post, idx) in posts" :key="'post'+idx">
+        <div class="row" v-for="(post, idx) in posts" :key="'post'+idx">
             <post-widget :post="post" :index="idx" @post-clicked="onPostClicked"></post-widget>
         </div>
     </div>
@@ -50,6 +51,10 @@ export default {
     .posts-title{
         font-size: 24px;
         font-weight: bold;
+    }
+    .row{
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 }
 </style>

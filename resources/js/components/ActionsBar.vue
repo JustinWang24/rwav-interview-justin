@@ -1,3 +1,13 @@
+<!--
+// resources/js/components/ActionsBar.vue
+Usage:
+    props
+    1: Required - visible: the switch of the actions bar visibility.
+    2: Required - inAction: tells the component if the action is taken in the outside world.
+
+    events
+    1: btn-clicked, payload: {action: String}
+-->
 <template>
     <div class="actions-bar p-30" v-show="visible">
         <button class="btn bg-blue text-white btn-load-post" @click.prevent="loadPostsBtnClicked">

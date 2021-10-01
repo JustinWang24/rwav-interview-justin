@@ -30,23 +30,17 @@ const app = createApp({
         },
         loadPosts: function(){
             this.inAction = true;
-
-            this.posts = [
-                {
-                    post_id: 1,
-                    user_id: 1,
-                    title: 'title 1',
-                    brief: 'brief 1',
-                },
-                {
-                    post_id: 2,
-                    user_id: 3,
-                    title: 'title 2',
-                    brief: 'brief 2',
+            axios.get(
+                'https://jsonplaceholder.typicode.com/posts'
+            ).then(res => {
+                for (let i = 0; i < 10; i++) {
+                    this.posts.push(res.data[i]);
                 }
-            ];
-
-            this.inAction = false;
+            }).catch(err => {
+                alert(err);
+            }).finally(() => {
+                this.inAction = false;
+            })
         },
         /**
          * Handler when the post was clicked
